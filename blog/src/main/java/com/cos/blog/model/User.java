@@ -47,8 +47,10 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private RoleType role; // Enum을 쓰는게 좋다.-> admin, user,manger (범위가 정해져있음)
 
-//	private String oauth; // kakao, google
-//	
+	
+	//카카오로그인/구글 로그인체크 (회원정보변경X)
+	private String oauth; // kakao, google
+	
 	// 내가 직접 시간을 넣으려면 Timestamp.valueOf(LocalDateTime.now())
 	@CreationTimestamp //시간이 자동입력
 	private Timestamp createDate;

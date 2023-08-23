@@ -22,7 +22,7 @@
 		<div>${board.content}</div>
 	</div>
 	<hr />
-<!-- 
+
 	<div class="card">
 	    <form>
 	        <input type="hidden" id="userId" value="${principal.user.id}" />
@@ -55,7 +55,7 @@
 				
 			</c:forEach>
 		</ul>
-		 -->
+
 	</div>
 </div>
 <script src="/js/board.js"></script>

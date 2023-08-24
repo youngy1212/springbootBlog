@@ -21,16 +21,15 @@ import lombok.RequiredArgsConstructor;
 
 
 @Service
+@RequiredArgsConstructor
 public class BoardService {
 	
-	@Autowired
-	private  BoardRepository boardRepository;
 	
-	@Autowired
-	private  ReplyRepository replyRepository;
+	private final BoardRepository boardRepository;
+	private final ReplyRepository replyRepository;
 	
-	@Autowired
-	private UserRepository userRepository;
+	//Autowired 대신 @RequiredArgsConstructor + final
+	//새로만들때 초기화가 필요한 애들은 꼭초 기화 해서 만들어줘! 
 	
 	@Transactional
 	public void 글쓰기(Board board, User user) { // title, content
@@ -103,5 +102,10 @@ public class BoardService {
 		//3번방법  @Query 사용
 		int result = replyRepository.mSave(replySaveRequestDto.getUserId(), replySaveRequestDto.getBoardId(), replySaveRequestDto.getContent());
 		System.out.println("BoardService : "+result);
+	}
+
+	@Transactional
+	public void 댓글삭제(int replyId) {
+		replyRepository.deleteById(replyId);
 	}
 }

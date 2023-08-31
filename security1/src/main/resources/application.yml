@@ -38,5 +38,12 @@ spring:
             scope:
             - email
             - profile
+            
+          facebook:
+            client-id: #id값
+            client-secret: #키값
+            scope:
+            - email
+            - public_profile
 
           
